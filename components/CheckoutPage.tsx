@@ -52,8 +52,6 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
     });
 
     if (error) {
-      // This point is only reached if there's an immediate error when
-      // confirming the payment. Show the error to your customer (for example, payment details incomplete)
       setErrorMessage(error.message);
     } else {
       // The payment UI automatically closes with a success animation.
@@ -88,7 +86,7 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
         disabled={!stripe || loading}
         className="text-white w-full p-5 bg-black mt-2 rounded-md font-bold disabled:opacity-50 disabled:animate-pulse"
       >
-        {!loading ? `Pay $${amount}` : "Processing..."}
+        {!loading ? `Pay ₹${amount}` : "Processing..."}
       </button>
     </form>
   );
